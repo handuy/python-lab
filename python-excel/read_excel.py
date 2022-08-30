@@ -7,7 +7,7 @@ def readExcel(excelFile, result):
 
     dict_item = {
         "Name": "",
-        "FutureState": ""
+        # "FutureState": ""
     }
     # iterate through excel and display data
     for i in range(2, activeSheet.max_row+1):
@@ -18,9 +18,9 @@ def readExcel(excelFile, result):
                 col_value = activeSheet.cell(row=i, column=j).value
                 dict_item["Name"] = col_value
                 
-            elif col_name == "FutureState":
-                col_value = activeSheet.cell(row=i, column=j).value
-                dict_item["FutureState"] = col_value
+            # elif col_name == "FutureState":
+            #     col_value = activeSheet.cell(row=i, column=j).value
+            #     dict_item["FutureState"] = col_value
 
             else:
                 continue
@@ -28,5 +28,5 @@ def readExcel(excelFile, result):
         result.append(dict_item)
         dict_item = {
             "Name": "",
-            "FutureState": ""
+            # "FutureState": ""
         }
